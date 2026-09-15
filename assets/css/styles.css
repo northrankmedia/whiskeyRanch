@@ -334,9 +334,12 @@ body.lightbox-locked { overflow: hidden; }
   min-height: 340px;
 }
 @media (max-width: 900px) {
+  /* Headline + CTA first, not the photo: on mobile, making someone scroll
+     past a full-screen image before they see what the place is (or the
+     View Menu button) costs attention we don't get back. */
   .hero-ghia { grid-template-columns: 1fr; }
-  .hero-ghia-copy { padding: var(--space-48) var(--space-24); order: 2; }
-  .hero-ghia-photo { order: 1; min-height: 320px; }
+  .hero-ghia-copy { padding: var(--space-48) var(--space-24); order: 1; }
+  .hero-ghia-photo { order: 2; min-height: 320px; }
 }
 
 .hero-actions {
