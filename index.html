@@ -18,11 +18,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Oswald:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- BarOrPub schema — see partials/schema.json.html for edit source -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,6 +52,8 @@
 </head>
 <body>
 
+  <div class="announcement-bar">LIVE MUSIC EVERY WEEKEND ON THE OXFORD SQUARE</div>
+
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <nav class="nav">
@@ -69,100 +70,101 @@
         <li><a href="gallery">Gallery</a></li>
         <li><a href="location">Location &amp; Hours</a></li>
         <li><a href="contact">Contact</a></li>
-        <li><a href="menu" class="btn btn-blue">View Menu</a></li>
+        <li><a href="menu" class="btn btn-coral">View Menu</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
 
-  <section class="hero" style="background-image: url('assets/gallery/hero-old-fashioned-splash.jpg'); background-position: center 30%;">
-    <div class="hero-content">
-      <p class="label label-on-dark">Oxford, Mississippi &middot; On The Square</p>
-      <h1>Whiskey Ranch</h1>
-      <p style="max-width:36em;font-size:1.15rem;">Good bourbon, cold drinks, live music, and late nights: a favorite place out in the country, right in the heart of Oxford. There aren't any cattle to round up. But there is plenty of whiskey.</p>
+  <section class="hero-ghia">
+    <div class="hero-ghia-copy">
+      <p class="label label-on-cream">Oxford, Mississippi</p>
+      <h1>Come For A<br>Drink. Stay<br>For The Story.</h1>
+      <p style="max-width:34em;font-size:1.05rem;color:var(--color-muted-on-cream);">Good bourbon, cold drinks, live music, and late nights: a favorite place out in the country, right in the heart of Oxford.</p>
       <div class="hero-actions">
-        <a href="menu" class="btn btn-blue">View Our Menu</a>
-        <a href="about" class="btn btn-outline-dark">Our Story</a>
+        <a href="menu" class="btn btn-coral">View Our Menu</a>
+        <a href="about" class="btn btn-outline-cream">Our Story</a>
       </div>
     </div>
+    <div class="hero-ghia-photo" style="background-image:url('assets/gallery/hero-old-fashioned-splash.jpg'); background-position: center 35%;"></div>
+  </section>
+
+  <div class="marquee-bar">
+    <p>GOOD BOURBON<span class="dot">&bull;</span>LIVE MUSIC<span class="dot">&bull;</span>LATE NIGHTS<span class="dot">&bull;</span>GOOD COMPANY<span class="dot">&bull;</span>OXFORD SQUARE</p>
+  </div>
+
+  <section class="story-split" style="margin-top:var(--space-64);">
+    <div class="story-split-copy reveal">
+      <p class="label label-on-dark">Why We're Here</p>
+      <h2>Less Like Another Bar</h2>
+      <p style="color:var(--color-muted-on-dark);">More like your favorite place out in the country: comfortable, a little rough around the edges, full of character, and always ready for a good time. There aren't any cattle to round up. But there is plenty of whiskey.</p>
+      <a href="about" class="btn btn-coral" style="align-self:flex-start;">Our Story</a>
+    </div>
+    <div class="story-split-photo" style="background-image:url('assets/gallery/live-music-band-stage-wide.jpg');"></div>
   </section>
 
   <section class="section section-cream">
-    <div class="container text-center narrow reveal">
-      <p class="label label-on-cream">Come For A Drink. Stay For The Story.</p>
-      <h2>Less Like Another Bar, More Like Your Favorite Place In The Country</h2>
-      <p>Whiskey is the spirit of the place: good bourbon, cold drinks, live music, and the stories that somehow get better every time they're told. Ranch is about something bigger: a gathering place, where friends meet, strangers become friends, and everybody feels welcome enough to pull up a chair and stay awhile.</p>
-      <a href="about" class="btn btn-outline-cream mt-lg">Read Our Story</a>
-    </div>
-  </section>
-
-  <div class="section-divider"><span></span></div>
-
-  <section class="section section-dark">
-    <div class="container">
-      <div class="grid grid-2" style="align-items:center;">
-        <div class="reveal">
-          <p class="label label-on-dark">Visit Us</p>
-          <h2>Hours &amp; Location</h2>
-          <div class="hours-block">
-            <div class="hours-row"><span class="hours-day">Mon &ndash; Fri</span><span>4:00pm &ndash; 1:00am</span></div>
-            <div class="hours-row"><span class="hours-day">Saturday</span><span>11:00am &ndash; 1:00am</span></div>
-            <div class="hours-row"><span class="hours-day">Sunday</span><span>11:00am &ndash; 9:00pm</span></div>
-          </div>
-          <p class="mt-lg">1112 Van Buren Avenue<br>Oxford, MS 38655<br><a href="tel:+18446433855">(844) 643-3855</a></p>
-          <a href="location" class="btn btn-outline-dark">Location &amp; Hours</a>
+    <div class="container reveal">
+      <p class="label label-on-cream text-center" style="display:block;">The Bar</p>
+      <h2 class="text-center">Pick Your Pour</h2>
+      <div class="circle-card-grid mt-lg">
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/cocktail-old-fashioned-close.jpg');"></div>
+          <p class="circle-card-name">Bourbon</p>
+          <p class="circle-card-sub">From $10</p>
         </div>
-        <div class="reveal reveal-2 framed-photo">
-          <img src="assets/gallery/live-music-band-stage.jpg" alt="Live band performing on stage at Whiskey Ranch">
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/bar-pour-martini.jpg'); background-position: center 30%;"></div>
+          <p class="circle-card-name">Vodka</p>
+          <p class="circle-card-sub">From $10</p>
         </div>
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/bar-pour-bartender.jpg'); background-position: center 30%;"></div>
+          <p class="circle-card-name">Tequila</p>
+          <p class="circle-card-sub">From $12</p>
+          <span class="sticker-tag" style="position:static;display:inline-block;margin-top:6px;transform:rotate(-6deg);">Bestseller</span>
+        </div>
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/hero-old-fashioned-splash.jpg'); background-position: center 25%;"></div>
+          <p class="circle-card-name">Beer</p>
+          <p class="circle-card-sub">From $5</p>
+        </div>
+      </div>
+      <div class="text-center mt-lg">
+        <a href="menu" class="btn btn-coral">See The Full Bar Menu</a>
       </div>
     </div>
   </section>
 
   <section class="section section-soft">
     <div class="container reveal">
-      <p class="label label-on-cream text-center" style="display:block;">The Ranch</p>
-      <h2 class="text-center">A Little Of What's Inside</h2>
-      <div class="grid-feature mt-lg">
-        <div class="gallery-item grid-feature-main">
-          <img src="assets/gallery/bar-pour-bartender.jpg" alt="Bartender pouring a cocktail behind the bar at Whiskey Ranch">
+      <div class="grid grid-2" style="align-items:center;">
+        <div>
+          <p class="label label-on-cream">Visit Us</p>
+          <h2>Hours &amp; Location</h2>
+          <div class="hours-block on-cream">
+            <div class="hours-row"><span class="hours-day">Mon &ndash; Fri</span><span>4:00pm &ndash; 1:00am</span></div>
+            <div class="hours-row"><span class="hours-day">Saturday</span><span>11:00am &ndash; 1:00am</span></div>
+            <div class="hours-row"><span class="hours-day">Sunday</span><span>11:00am &ndash; 9:00pm</span></div>
+          </div>
+          <p class="mt-lg">1112 Van Buren Avenue<br>Oxford, MS 38655<br><a href="tel:+18446433855">(844) 643-3855</a></p>
+          <a href="location" class="btn btn-outline-cream">Location &amp; Hours</a>
         </div>
-        <div class="gallery-item">
+        <div class="reveal reveal-2 framed-photo">
           <img src="assets/gallery/patio-oxford-square.jpg" alt="Guests on the patio at Whiskey Ranch overlooking the Oxford Square">
         </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/cocktail-old-fashioned-close.jpg" alt="An old fashioned cocktail on the bar at Whiskey Ranch">
-        </div>
-      </div>
-      <div class="text-center mt-lg">
-        <a href="gallery" class="btn btn-outline-cream">View Full Gallery</a>
       </div>
     </div>
   </section>
 
-  <section class="section section-dark">
-    <div class="container">
-      <div class="grid grid-2" style="align-items:center;">
-        <div class="reveal framed-photo">
-          <img src="assets/gallery/guests-friends-evening.jpg" alt="Friends gathered at Whiskey Ranch on a Friday night">
-        </div>
-        <div class="reveal reveal-2">
-          <p class="label label-on-dark">Every Night's A Little Different</p>
-          <h2>Live Music &amp; Late Nights</h2>
-          <p>Bands on the stage, football Saturdays on the TVs, and a crowd that turns strangers into regulars by last call. Follow along on Instagram to see what's happening this week.</p>
-          <a href="https://www.instagram.com/whiskeyranchoxford" class="btn btn-outline-dark" target="_blank" rel="noopener">Follow @whiskeyranchoxford</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-cream">
-    <div class="container text-center narrow reveal">
-      <p class="label label-on-cream">Hungry?</p>
+  <section class="story-split" style="margin-bottom:var(--space-64);">
+    <div class="story-split-photo" style="background-image:url('assets/gallery/guests-friends-evening-wide.jpg'); background-size:cover;"></div>
+    <div class="story-split-copy reveal" style="background:var(--color-olive);">
+      <p class="label" style="color:var(--color-sage);">Hungry?</p>
       <h2>Snacks You'll Be Dying To Get Your Hands On</h2>
-      <p>Loaded fries, hand-battered mozzarella sticks, in-house breaded tenders, and grilled cheese built like it means it, all made to go with a cold beer or a pour of bourbon.</p>
-      <a href="menu" class="btn btn-blue">See The Full Menu</a>
+      <p style="color:var(--color-cream);opacity:0.85;">Loaded fries, hand-battered mozzarella sticks, in-house breaded tenders, and grilled cheese built like it means it, all made to go with a cold beer or a pour of bourbon.</p>
+      <a href="menu" class="btn btn-coral" style="align-self:flex-start;">See The Full Menu</a>
     </div>
   </section>
 

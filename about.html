@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Oswald:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -40,7 +40,7 @@
         <li><a href="gallery">Gallery</a></li>
         <li><a href="location">Location &amp; Hours</a></li>
         <li><a href="contact">Contact</a></li>
-        <li><a href="menu" class="btn btn-blue">View Menu</a></li>
+        <li><a href="menu" class="btn btn-coral">View Menu</a></li>
       </ul>
     </nav>
   </header>
@@ -53,36 +53,41 @@
     <div class="page-banner-scrim"></div>
     <div class="page-banner-content">
       <p class="label label-on-dark">Our Story</p>
-      <h1>Come For A Drink. Stay For The Story.</h1>
+      <h1>Two Words, One Place</h1>
     </div>
   </section>
 
   <section class="section section-cream">
-    <div class="container narrow reveal">
-      <p class="label label-on-cream text-center" style="display:block;">Why We're Here</p>
-      <h2 class="text-center">Two Words, One Place</h2>
+    <div class="container narrow text-center reveal">
+      <p class="label label-on-cream">Why We're Here</p>
+      <h2>It's Right There In The Name</h2>
       <p>We wanted to create a place that felt less like another bar and more like your favorite place out in the country: comfortable, a little rough around the edges, full of character, and always ready for a good time.</p>
-      <p>The <strong>&ldquo;Whiskey&rdquo;</strong> represents the spirit of the place: good bourbon, cold drinks, live music, late nights, and the stories that somehow get better every time they're told.</p>
-      <p>The <strong>&ldquo;Ranch&rdquo;</strong> is about something bigger. In the South, the best places have always been gathering places: somewhere friends meet, strangers become friends, and everybody feels welcome enough to pull up a chair and stay awhile.</p>
-      <p>Put the two together and you get Whiskey Ranch.</p>
     </div>
   </section>
 
-  <div class="section-divider"><span></span></div>
+  <section class="story-split">
+    <div class="story-split-copy reveal">
+      <p class="label label-on-dark">Whiskey</p>
+      <h2>The Spirit Of The Place</h2>
+      <p style="color:var(--color-muted-on-dark);">Good bourbon, cold drinks, live music, late nights, and the stories that somehow get better every time they're told.</p>
+    </div>
+    <div class="story-split-photo" style="background-image:url('assets/gallery/bar-pour-martini.jpg'); background-position: center 20%;"></div>
+  </section>
 
-  <section class="section section-dark">
-    <div class="container">
-      <div class="grid grid-2" style="align-items:center;">
-        <div class="reveal framed-photo">
-          <img src="assets/gallery/patio-oxford-square.jpg" alt="Guests on the Whiskey Ranch patio with the Oxford, Mississippi courthouse square in view">
-        </div>
-        <div class="reveal reveal-2">
-          <p class="label label-on-dark">Oxford, Mississippi</p>
-          <h2>Right Here On The Square</h2>
-          <p>Oxford is a town famous for its stories, characters, music, football Saturdays, and more than a few legendary nights. Whiskey Ranch was opened in February 2025 by Backwoods Hospitality Group to add a few stories of its own.</p>
-          <p>There aren't any cattle to round up. But there is plenty of whiskey.</p>
-        </div>
-      </div>
+  <section class="story-split">
+    <div class="story-split-photo" style="background-image:url('assets/gallery/patio-oxford-square.jpg'); background-color:var(--color-olive); order:1;"></div>
+    <div class="story-split-copy reveal" style="order:2;background:var(--color-olive);">
+      <p class="label" style="color:var(--color-sage);">Ranch</p>
+      <h2>Something Bigger</h2>
+      <p style="color:var(--color-cream);opacity:0.85;">In the South, the best places have always been gathering places: somewhere friends meet, strangers become friends, and everybody feels welcome enough to pull up a chair and stay awhile.</p>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container narrow text-center reveal">
+      <p class="label label-on-cream">Put The Two Together</p>
+      <h2>And You Get Whiskey Ranch</h2>
+      <p>There aren't any cattle to round up. But there is plenty of whiskey. Whiskey Ranch was opened in February 2025 by Backwoods Hospitality Group, right here on the Oxford Square, to add a few stories of its own.</p>
     </div>
   </section>
 
@@ -90,15 +95,18 @@
     <div class="container reveal">
       <p class="label label-on-cream text-center" style="display:block;">Behind The Bar</p>
       <h2 class="text-center">The Team Pouring Your Drinks</h2>
-      <div class="grid grid-3 mt-lg">
-        <div class="gallery-item" style="aspect-ratio: 3/4;">
-          <img src="assets/gallery/team-bartender-portrait.jpg" alt="A Whiskey Ranch bartender behind the bar">
+      <div class="circle-card-grid mt-lg" style="grid-template-columns:repeat(3, 1fr);max-width:760px;margin-inline:auto;">
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/team-bartender-portrait.jpg'); background-position: center 25%;"></div>
+          <p class="circle-card-name">On The Pour</p>
         </div>
-        <div class="gallery-item" style="aspect-ratio: 3/4;">
-          <img src="assets/gallery/bar-pour-martini.jpg" alt="A Whiskey Ranch bartender pouring a cocktail on the bar top">
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/bar-pour-martini.jpg'); background-position: center 20%;"></div>
+          <p class="circle-card-name">Mixing It Up</p>
         </div>
-        <div class="gallery-item" style="aspect-ratio: 3/4;">
-          <img src="assets/gallery/team-bartenders-duo.jpg" alt="Two Whiskey Ranch bartenders holding bottles behind the bar">
+        <div class="circle-card">
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/team-bartenders-duo.jpg'); background-position: center 20%;"></div>
+          <p class="circle-card-name">The Crew</p>
         </div>
       </div>
     </div>
@@ -109,7 +117,7 @@
       <p class="label label-on-cream">Welcome To Whiskey Ranch</p>
       <h2>Pull Up A Chair</h2>
       <p>Come for a drink. Stay for the story.</p>
-      <a href="menu" class="btn btn-blue">View Our Menu</a>
+      <a href="menu" class="btn btn-coral">View Our Menu</a>
     </div>
   </section>
 

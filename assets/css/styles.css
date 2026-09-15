@@ -1,42 +1,62 @@
 /* ==========================================================================
    Whiskey Ranch — Design System
-   Palette: navy + blue (client-requested) with cream and the logo's own
-   barrel-wood tan/brown as a warm secondary accent, so the badge logo never
-   fights the site around it.
+   Built on the "Ghia" style reference (Mediterranean aperitivo label):
+   warm cream canvases, deep burgundy statement sections, coral pill CTAs.
+   Adapted with Whiskey Ranch's own photography and copy.
    ========================================================================== */
 
 :root {
-  /* Primary palette */
-  --color-navy-deep: #0b1930;
-  --color-navy: #132a4d;
-  --color-navy-mid: #1c3a68;
-  --color-blue: #2f5fa8;
-  --color-blue-light: #7fa8e3;
-  --color-cream: #f4ede1;
-  --color-cream-soft: #ece0cd;
-  --color-ink: #0a1220;
-  --color-tan: #ab8d75;
-  --color-tan-deep: #7a5a3f; /* darker than --color-tan: passes 4.5:1 on cream for small text */
-  --color-cream-text-on-dark: #f4ede1;
-  --color-muted-on-cream: #5c5648;
-  --color-muted-on-dark: #b7c2d6;
-  --color-border-on-dark: rgba(244, 237, 225, 0.16);
-  --color-border-on-cream: rgba(10, 18, 32, 0.14);
+  /* Colors */
+  --color-burgundy: #651c32;
+  --color-burgundy-deep: #4a1424;
+  --color-coral: #ef6079;
+  --color-coral-deep: #d94863;
+  --color-cream: #f2e2d5;
+  --color-bone: #fef6ee;
+  --color-smoke: #e5e7eb;
+  --color-charcoal: #000000;
+  --color-olive: #3e4938;
+  --color-dusty-rose: #dfcac8;
+  --color-riviera-blue: #abd2eb;
+  --color-limoncello: #f0e87b;
+  --color-sage: #b6cfd0;
+
+  --color-text-on-cream: #3a1420;
+  --color-muted-on-cream: #6b5248;
+  --color-muted-on-dark: #e3c9bf;
+  --color-border-on-dark: rgba(254, 246, 238, 0.18);
+  --color-border-on-cream: rgba(101, 28, 50, 0.16);
 
   /* Type */
-  --font-display: 'Fraunces', 'Georgia', serif;
-  --font-label: 'Oswald', 'Arial Narrow', sans-serif;
-  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-body: 'Lora', 'Georgia', serif;
 
-  /* Spacing scale */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 7rem;
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* Back-compat aliases (existing utility classes below use these) */
+  --space-xs: var(--space-8);
+  --space-sm: var(--space-16);
+  --space-md: var(--space-32);
+  --space-lg: var(--space-64);
+  --space-xl: var(--space-80);
 
   --max-width: 1180px;
-  --max-width-wide: 1480px;
+  --max-width-wide: 1280px;
+  --radius-pill: 9999px;
+  --radius-card: 16px;
+  --radius-container: 24px;
   --transition: 220ms ease;
 }
 
@@ -51,18 +71,18 @@ body {
   margin: 0;
   font-family: var(--font-body);
   background: var(--color-cream);
-  color: var(--color-navy-deep);
-  line-height: 1.65;
+  color: var(--color-text-on-cream);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--color-blue); color: var(--color-cream); }
+::selection { background: var(--color-coral); color: var(--color-bone); }
 
-html { scrollbar-color: var(--color-blue) var(--color-cream-soft); scrollbar-width: thin; }
+html { scrollbar-color: var(--color-coral) var(--color-cream); scrollbar-width: thin; }
 ::-webkit-scrollbar { width: 11px; }
-::-webkit-scrollbar-track { background: var(--color-cream-soft); }
-::-webkit-scrollbar-thumb { background: var(--color-blue); border: 2px solid var(--color-cream-soft); border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-navy-mid); }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-coral); border: 2px solid var(--color-cream); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-coral-deep); }
 
 img { max-width: 100%; display: block; }
 
@@ -70,108 +90,123 @@ a { color: inherit; text-decoration: none; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.08;
-  margin: 0 0 var(--space-sm);
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-16);
 }
 
-h1 { font-size: clamp(2.75rem, 6vw, 5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
-h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
+h1 { font-size: clamp(2.75rem, 6.5vw, 4.5rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.6rem); }
 
-p { margin: 0 0 var(--space-sm); }
+p { margin: 0 0 var(--space-16); }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-32);
 }
 
 .container-wide {
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-32);
 }
 
 @media (max-width: 640px) {
-  .container, .container-wide { padding: 0 var(--space-sm); }
+  .container, .container-wide { padding: 0 var(--space-16); }
 }
 
-/* Label / eyebrow text — tracked uppercase condensed, the "sign-painted" system */
+/* Label / eyebrow — small tracked caps, Lora not Bebas (labels stay readable) */
 .label {
-  font-family: var(--font-label);
+  font-family: var(--font-body);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.76rem;
-  font-weight: 500;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
-.label-on-dark { color: var(--color-blue-light); }
-.label-on-cream { color: var(--color-tan-deep); }
+.label-on-dark { color: var(--color-dusty-rose); }
+.label-on-cream { color: var(--color-burgundy); }
 
 .section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-80) 0;
 }
 
 .section-dark {
-  background: var(--color-navy);
-  color: var(--color-cream-text-on-dark);
+  background: var(--color-burgundy);
+  color: var(--color-bone);
 }
 
 .section-cream {
   background: var(--color-cream);
-  color: var(--color-navy-deep);
+  color: var(--color-text-on-cream);
 }
 
 .section-soft {
-  background: var(--color-cream-soft);
+  background: var(--color-bone);
 }
 
 /* ==========================================================================
-   Buttons
+   Buttons — pill shape, coral primary, per the reference. No drop shadows,
+   no gradients: contrast comes from flat color only.
    ========================================================================== */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6em;
-  padding: 0.95em 2.1em;
-  font-family: var(--font-label);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.82rem;
-  font-weight: 500;
+  gap: 0.5em;
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
   white-space: nowrap;
 }
 .btn:active { transform: translateY(1px); }
 
-.btn-blue {
-  background: var(--color-blue);
-  color: var(--color-cream);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+.btn-blue,
+.btn-coral {
+  background: var(--color-coral);
+  color: var(--color-bone);
 }
-.btn-blue:hover { background: var(--color-blue-light); color: var(--color-ink); transform: translateY(-2px); box-shadow: 0 8px 20px -6px rgba(47,95,168,0.55); }
-.btn-blue:active { transform: translateY(0); }
+.btn-blue:hover,
+.btn-coral:hover { background: var(--color-coral-deep); }
 
 .btn-outline-dark {
   background: transparent;
-  border-color: var(--color-cream);
-  color: var(--color-cream);
+  border-color: var(--color-bone);
+  color: var(--color-bone);
 }
-.btn-outline-dark:hover { background: var(--color-cream); color: var(--color-navy-deep); transform: translateY(-2px); }
+.btn-outline-dark:hover { background: var(--color-bone); color: var(--color-burgundy); }
 
 .btn-outline-cream {
   background: transparent;
-  border-color: var(--color-navy-deep);
-  color: var(--color-navy-deep);
+  border-color: var(--color-burgundy);
+  color: var(--color-burgundy);
 }
-.btn-outline-cream:hover { background: var(--color-navy-deep); color: var(--color-cream); transform: translateY(-2px); }
+.btn-outline-cream:hover { background: var(--color-burgundy); color: var(--color-bone); }
+
+/* ==========================================================================
+   Announcement bar
+   ========================================================================== */
+
+.announcement-bar {
+  background: var(--color-coral);
+  color: var(--color-bone);
+  text-align: center;
+  padding: 10px var(--space-16);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
 
 /* ==========================================================================
    Header / Nav
@@ -182,17 +217,16 @@ p { margin: 0 0 var(--space-sm); }
   left: -9999px;
   top: 0;
   z-index: 200;
-  background: var(--color-blue);
-  color: var(--color-cream);
+  background: var(--color-coral);
+  color: var(--color-bone);
   padding: 0.8em 1.4em;
-  font-family: var(--font-label);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.8rem;
 }
 .skip-link:focus {
-  left: var(--space-sm);
-  top: var(--space-sm);
+  left: var(--space-16);
+  top: var(--space-16);
 }
 
 body.lightbox-locked { overflow: hidden; }
@@ -201,9 +235,7 @@ body.lightbox-locked { overflow: hidden; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 25, 48, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-border-on-dark);
+  background: var(--color-burgundy);
   overflow: visible;
 }
 
@@ -211,37 +243,36 @@ body.lightbox-locked { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-md);
-  height: 78px;
-  padding: 0 var(--space-md);
+  gap: var(--space-32);
+  height: 72px;
+  padding: 0 var(--space-32);
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 108px; width: auto; }
+.nav-logo img { height: 96px; width: auto; }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .nav-links a {
-  font-family: var(--font-label);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
-  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-bone);
   opacity: 0.86;
   white-space: nowrap;
   transition: opacity var(--transition);
 }
 .nav-links a:hover,
-.nav-links a[aria-current="page"] { opacity: 1; border-bottom: 1px solid var(--color-blue-light); }
+.nav-links a[aria-current="page"] { opacity: 1; }
 .nav-links a.btn { white-space: nowrap; }
 
 .nav-toggle {
@@ -255,7 +286,7 @@ body.lightbox-locked { overflow: hidden; }
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--color-cream);
+  background: var(--color-bone);
   margin: 5px 0;
 }
 
@@ -268,82 +299,250 @@ body.lightbox-locked { overflow: hidden; }
     right: 0;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-sm);
-    background: var(--color-navy);
-    padding: var(--space-md);
-    border-bottom: 1px solid var(--color-border-on-dark);
+    gap: var(--space-16);
+    background: var(--color-burgundy);
+    padding: var(--space-32);
     display: none;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { white-space: normal; font-size: 0.86rem; letter-spacing: 0.1em; }
-  .nav-logo img { height: 84px; }
+  .nav-links a { white-space: normal; font-size: 0.95rem; }
+  .nav-logo img { height: 72px; }
 }
 
 /* ==========================================================================
-   Hero
+   Hero — cream canvas, headline left, full-bleed photo right (no rounding,
+   no container — the imagery runs to the frame edge per the reference).
    ========================================================================== */
 
-.hero {
-  position: relative;
-  min-height: 84vh;
+.hero-ghia {
+  background: var(--color-cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-height: 74vh;
+}
+.hero-ghia-copy {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-64) var(--space-48);
+}
+.hero-ghia-copy h1 { color: var(--color-burgundy); }
+.hero-ghia-photo {
   background-size: cover;
   background-position: center;
-  color: var(--color-cream);
+  min-height: 340px;
 }
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(11,25,48,0.25) 0%, rgba(11,25,48,0.85) 100%);
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: var(--space-xl) var(--space-md) var(--space-lg);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  width: 100%;
+@media (max-width: 900px) {
+  .hero-ghia { grid-template-columns: 1fr; }
+  .hero-ghia-copy { padding: var(--space-48) var(--space-24); order: 2; }
+  .hero-ghia-photo { order: 1; min-height: 320px; }
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
+  gap: var(--space-16);
+  margin-top: var(--space-24);
 }
 
-/* Sub-hero page banner (interior pages). Source photos are portrait phone/pro
-   shots; a full-bleed wide banner would force a heavy crop via
-   background-size:cover. Fix: a centered, minimally-cropped sharp photo
-   panel, flanked by a blurred/darkened full version of the same photo so the
-   banner still reads as full-bleed. */
+/* ==========================================================================
+   Trust marquee — repeating burgundy band of bold caps, bullet-separated
+   ========================================================================== */
+
+/* A shade darker than --color-burgundy, not the same value: back-to-back
+   with the story-split section right after it (also burgundy), the two
+   read as one merged block without some contrast between them. */
+.marquee-bar {
+  background: var(--color-burgundy-deep);
+  color: var(--color-bone);
+  padding: var(--space-20) 0;
+  text-align: center;
+}
+.marquee-bar p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.marquee-bar .dot { color: var(--color-coral); margin: 0 0.6em; }
+
+/* ==========================================================================
+   Brand story split — strict 50/50, dark statement left, photo right
+   ========================================================================== */
+
+.story-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.story-split-copy {
+  background: var(--color-burgundy);
+  color: var(--color-bone);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-80) var(--space-48);
+}
+.story-split-copy h2 { color: var(--color-bone); }
+/* contain, not cover: these are portrait people-shots being placed into a
+   landscape half-column, and cover was cropping heads/hands to fill the
+   box. contain shows the whole photo and lets the section's own color
+   (set per-instance below) fill the letterbox space instead of leaving a
+   white gap, so it still reads as a deliberate full-bleed panel. */
+.story-split-photo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--color-burgundy);
+  min-height: 540px;
+}
+@media (max-width: 900px) {
+  .story-split { grid-template-columns: 1fr; }
+  .story-split-copy { padding: var(--space-48) var(--space-24); order: 2; }
+  .story-split-photo { order: 1; min-height: 380px; }
+}
+
+/* ==========================================================================
+   Circular product card — bottle-style crop, used for The Bar categories
+   ========================================================================== */
+
+.circle-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-32);
+}
+@media (max-width: 900px) { .circle-card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.circle-card { text-align: center; position: relative; }
+.circle-card-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-pill);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--space-16);
+}
+.circle-card-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-burgundy);
+  margin-bottom: 2px;
+}
+.circle-card-sub {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-muted-on-cream);
+}
+
+/* Sticker tag — rotated highlight badge */
+.sticker-tag {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--color-limoncello);
+  color: var(--color-burgundy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transform: rotate(-6deg);
+}
+
+/* ==========================================================================
+   Category filter pill
+   ========================================================================== */
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  justify-content: center;
+}
+.filter-pill {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bone);
+  color: var(--color-burgundy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.filter-pill.active { background: var(--color-riviera-blue); color: var(--color-burgundy); }
+
+/* ==========================================================================
+   Product detail card (menu highlight)
+   ========================================================================== */
+
+.product-card {
+  background: var(--color-bone);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  padding: 0 0 var(--space-24);
+}
+.product-card-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--space-16);
+}
+.product-card-body { padding: 0 var(--space-24); }
+.product-card-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-burgundy);
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+}
+.product-card-desc {
+  font-size: 0.9rem;
+  color: var(--color-muted-on-cream);
+  margin-bottom: var(--space-16);
+}
+
+/* ==========================================================================
+   Sub-hero page banner (interior pages). Source photos are portrait; a
+   full-bleed wide banner would force a heavy crop via background-size:cover.
+   Fix: a blurred/darkened full version of the photo behind a sharp centered
+   layer so the banner still reads as full-bleed without losing the subject.
+   ========================================================================== */
+
 .page-banner {
   position: relative;
-  min-height: 68vh;
+  min-height: 56vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  color: var(--color-cream);
-  background: var(--color-navy);
+  color: var(--color-bone);
+  background: var(--color-burgundy);
 }
 .page-banner-bg {
   position: absolute;
   inset: -20px;
   background-size: cover;
   background-position: center;
-  filter: blur(36px) brightness(0.4) saturate(0.9);
+  filter: blur(36px) brightness(0.5) saturate(0.9);
   transform: scale(1.15);
   z-index: 0;
 }
+/* contain, not cover: the blurred .page-banner-bg layer behind this already
+   fills the frame edge-to-edge, so this sharp layer is free to show the
+   whole photo (no cropped foreheads) without leaving a visible gap — the
+   blur shows through around it instead of bare background color. */
 .page-banner-photo {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
 }
@@ -351,20 +550,16 @@ body.lightbox-locked { overflow: hidden; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(11,25,48,0.2) 0%, rgba(11,25,48,0.88) 100%);
+  background: linear-gradient(180deg, rgba(74,20,36,0.15) 0%, rgba(74,20,36,0.85) 100%);
 }
-
-.page-banner h1 { font-size: clamp(2.75rem, 5.5vw, 4.5rem); }
+.page-banner h1 { color: var(--color-bone); font-size: clamp(2.5rem, 5.5vw, 3.75rem); }
 .page-banner-content {
   position: relative;
   z-index: 2;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-32) var(--space-48);
   width: 100%;
-}
-@media (max-width: 860px) {
-  .page-banner-photo { width: 100%; }
 }
 
 /* ==========================================================================
@@ -373,7 +568,7 @@ body.lightbox-locked { overflow: hidden; }
 
 .grid {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-32);
 }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -386,71 +581,79 @@ body.lightbox-locked { overflow: hidden; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* color is set explicitly, not inherited: a .card dropped onto a
+   .section-dark parent would otherwise inherit that section's light
+   cream text color onto its own light bone background. */
 .card {
-  background: var(--color-cream);
+  background: var(--color-bone);
+  color: var(--color-text-on-cream);
   border: 1px solid var(--color-border-on-cream);
-  padding: var(--space-md);
+  border-radius: var(--radius-card);
+  padding: var(--space-32);
 }
+.card .menu-item-price { color: var(--color-text-on-cream); }
 
-/* Frames a third-party embed that can't be recolored to match the
-   site palette — the blue strip + shadow reads as an intentional accent
-   rather than a stray white box. */
 .form-frame {
   max-width: 600px;
   margin-inline: auto;
-  background: #eee4d4;
+  background: var(--color-bone);
   padding: 16px;
-  border: 3px solid var(--color-blue);
-  border-radius: 16px;
+  border: 3px solid var(--color-coral);
+  border-radius: var(--radius-container);
   overflow: hidden;
-  box-shadow: 0 30px 70px -28px rgba(0,0,0,0.65);
 }
 .form-frame iframe { border-radius: 6px; }
 
-/* Hours block — single source of truth, reused on Home/Location/Footer */
+/* Hours block */
 .hours-block {
   font-family: var(--font-body);
 }
 .hours-block .hours-row {
   display: flex;
   justify-content: space-between;
-  gap: var(--space-md);
+  gap: var(--space-32);
   padding: 0.55em 0;
   border-bottom: 1px solid var(--color-border-on-dark);
   font-size: 0.92rem;
-  letter-spacing: 0.02em;
 }
 .hours-block.on-cream .hours-row { border-bottom: 1px solid var(--color-border-on-cream); }
 .hours-block .hours-row:last-child { border-bottom: none; }
-.hours-day { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; opacity: 0.86; }
+.hours-day { font-family: var(--font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; opacity: 0.86; }
 
 /* ==========================================================================
-   Menu card layout ("printed card" pattern)
+   Menu card layout
    ========================================================================== */
 
-.menu-section { margin-bottom: var(--space-lg); }
+.menu-section { margin-bottom: var(--space-64); }
 .menu-section-title {
-  font-family: var(--font-label);
+  font-family: var(--font-display);
   text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  font-size: 1.6rem;
   text-align: center;
-  color: var(--color-tan-deep);
-  margin-bottom: var(--space-md);
-  position: relative;
+  color: var(--color-coral-deep);
+  margin-bottom: var(--space-32);
 }
+/* Inside the two-column Domestics/Imported layout, a centered title floats
+   above left-aligned rows below it and doesn't read as one column. Align
+   it with its own list instead. */
+.grid-2 .menu-section-title { text-align: left; }
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: var(--space-sm);
+  gap: var(--space-16);
   padding: 0.9em 0;
   border-bottom: 1px dashed var(--color-border-on-cream);
 }
 .menu-item:last-child { border-bottom: none; }
-.menu-item-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; }
-.menu-item-desc { font-style: italic; color: var(--color-muted-on-cream); font-size: 0.9rem; display: block; margin-top: 0.15em; }
-.menu-item-price { font-family: var(--font-label); font-size: 0.95rem; white-space: nowrap; }
+.menu-item-name { font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; }
+/* color: currentColor + opacity, not a hardcoded muted brown: that brown
+   was tuned for cream backgrounds and went nearly invisible on the dark
+   burgundy liquor-menu section. Inheriting the item's own text color at
+   reduced opacity works on light and dark alike. */
+.menu-item-desc { font-style: italic; color: inherit; opacity: 0.7; font-size: 0.88rem; display: block; margin-top: 0.15em; }
+.menu-item-price { font-family: var(--font-body); font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
 
 /* ==========================================================================
    Gallery / lightbox
@@ -459,7 +662,7 @@ body.lightbox-locked { overflow: hidden; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xs);
+  gap: var(--space-8);
 }
 @media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -467,6 +670,7 @@ body.lightbox-locked { overflow: hidden; }
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
+  border-radius: var(--radius-card);
 }
 .gallery-item img {
   width: 100%;
@@ -475,29 +679,43 @@ body.lightbox-locked { overflow: hidden; }
   transition: transform 400ms ease;
 }
 .gallery-item:hover img { transform: scale(1.06); }
-.gallery-item:focus-visible { outline: 3px solid var(--color-blue); outline-offset: -3px; }
+.gallery-item:focus-visible { outline: 3px solid var(--color-coral); outline-offset: -3px; }
+
+.masonry-grid {
+  columns: 3 260px;
+  column-gap: var(--space-8);
+}
+.masonry-grid .gallery-item {
+  aspect-ratio: unset;
+  break-inside: avoid;
+  margin-bottom: var(--space-8);
+  width: 100%;
+}
+.masonry-grid .gallery-item img { height: auto; }
+@media (max-width: 640px) { .masonry-grid { columns: 2 160px; } }
 
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(10,18,32,0.94);
+  background: rgba(58,20,32,0.94);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: var(--space-md);
+  padding: var(--space-32);
 }
 .lightbox.open { display: flex; }
-.lightbox img { max-height: 88vh; max-width: 92vw; }
+.lightbox img { max-height: 88vh; max-width: 92vw; border-radius: var(--radius-card); }
 .lightbox-close {
   position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
+  top: var(--space-32);
+  right: var(--space-32);
   background: none;
-  border: 1px solid var(--color-cream);
-  color: var(--color-cream);
+  border: 1px solid var(--color-bone);
+  color: var(--color-bone);
   width: 42px;
   height: 42px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   font-size: 1.2rem;
 }
@@ -507,44 +725,40 @@ body.lightbox-locked { overflow: hidden; }
    ========================================================================== */
 
 .site-footer {
-  background: var(--color-ink);
+  background: var(--color-burgundy);
   color: var(--color-muted-on-dark);
-  padding: var(--space-lg) 0 var(--space-md);
+  padding: var(--space-64) 0 var(--space-32);
 }
-/* Flexbox, not a grid with fr tracks: fr columns stretched each block to its
-   track width regardless of content, leaving a huge dead gap between the
-   (narrow) logo/address block and the Hours column. Flex + space-between
-   sizes each block to its own content and spaces them evenly instead. */
 .footer-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  gap: var(--space-64);
+  margin-bottom: var(--space-64);
 }
 @media (max-width: 780px) {
-  .footer-grid { flex-direction: column; gap: var(--space-md); }
+  .footer-grid { flex-direction: column; gap: var(--space-32); }
   .site-footer .footer-explore { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9em 1.25em; }
 }
-.footer-logo img { height: 76px; width: auto; margin-bottom: var(--space-sm); }
-.footer-social { display: flex; gap: var(--space-sm); margin-top: var(--space-sm); }
+.footer-logo img { height: 68px; width: auto; margin-bottom: var(--space-16); }
+.footer-social { display: flex; gap: var(--space-16); margin-top: var(--space-16); }
 .footer-social a {
   width: 38px; height: 38px;
   border: 1px solid var(--color-border-on-dark);
-  border-radius: 50%;
+  border-radius: var(--radius-pill);
   display: flex; align-items: center; justify-content: center;
   font-size: 0.85rem;
 }
 .footer-bottom {
   border-top: 1px solid var(--color-border-on-dark);
-  padding-top: var(--space-sm);
+  padding-top: var(--space-16);
   font-size: 0.78rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: var(--space-xs);
+  gap: var(--space-8);
 }
-.footer-legal a { color: var(--color-cream); opacity: 0.7; }
+.footer-legal a { color: var(--color-bone); opacity: 0.7; }
 .footer-legal a:hover { opacity: 1; }
 
 .footer-explore {
@@ -556,11 +770,10 @@ body.lightbox-locked { overflow: hidden; }
   gap: 0.7em;
 }
 .footer-explore a {
-  font-family: var(--font-label);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.84rem;
-  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--color-bone);
   opacity: 0.86;
   transition: opacity var(--transition);
 }
@@ -568,9 +781,6 @@ body.lightbox-locked { overflow: hidden; }
 
 /* ==========================================================================
    Scroll reveal
-   Default state is fully visible — JS only ever ADDS the hidden starting
-   state (via .reveal-armed on <html>), and a timeout fallback in main.js
-   force-shows everything if IntersectionObserver ever fails to fire.
    ========================================================================== */
 
 .reveal { opacity: 1; transform: none; }
@@ -584,76 +794,83 @@ body.lightbox-locked { overflow: hidden; }
 .reveal-armed .reveal.reveal-3 { transition-delay: 240ms; }
 
 /* ==========================================================================
-   Ornamental section divider — thin blue rule with a small centered mark,
-   used sparingly between homepage sections instead of a hard color cut.
-   ========================================================================== */
-
-.section-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) 0;
-}
-.section-divider::before,
-.section-divider::after {
-  content: '';
-  height: 1px;
-  width: 64px;
-  background: var(--color-blue);
-  opacity: 0.6;
-}
-.section-divider span {
-  width: 7px;
-  height: 7px;
-  background: var(--color-blue);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-.section-divider.on-dark::before,
-.section-divider.on-dark::after { background: var(--color-blue-light); }
-.section-divider.on-dark span { background: var(--color-blue-light); }
-
-/* ==========================================================================
-   Framed photo — gives a standalone content photo a "matted print" feel
-   instead of sitting flush/bleeding into the section.
+   Framed photo
    ========================================================================== */
 
 .framed-photo {
-  padding: 16px;
-  background: var(--color-cream);
-  border: 1px solid var(--color-blue);
-  box-shadow: 0 30px 60px -24px rgba(10,18,32,0.55);
+  padding: 12px;
+  background: var(--color-bone);
+  border-radius: var(--radius-card);
 }
-.framed-photo img { display: block; width: 100%; }
-@media (max-width: 640px) {
-  .framed-photo { padding: 10px; }
-}
+.framed-photo img { display: block; width: 100%; border-radius: 10px; }
 
 /* ==========================================================================
    Menu "printed card" framing
    ========================================================================== */
 
 .menu-card {
-  background: var(--color-cream);
-  border: 1px solid var(--color-tan);
-  outline: 1px solid var(--color-border-on-cream);
-  outline-offset: -7px;
-  padding: var(--space-lg) var(--space-md);
-  box-shadow: 0 24px 60px -30px rgba(10,18,32,0.35);
+  background: var(--color-bone);
+  border-radius: var(--radius-container);
+  padding: var(--space-64) var(--space-32);
 }
 @media (max-width: 640px) {
-  .menu-card { padding: var(--space-md) var(--space-sm); }
+  .menu-card { padding: var(--space-32) var(--space-16); }
 }
-.menu-item {
-  transition: background var(--transition);
-  border-radius: 2px;
-}
-.menu-item:hover { background: var(--color-cream-soft); }
+.menu-item { transition: background var(--transition); border-radius: 8px; }
+/* Translucent, not a solid fill: a solid var(--color-cream) hover background
+   made text invisible in the dark liquor-menu section, where item names are
+   hardcoded to that same cream color. A tint over whatever's already there
+   can never fully match the text color, light or dark section alike. */
+.menu-item:hover { background: rgba(101, 28, 50, 0.06); }
+.section-dark .menu-item:hover { background: rgba(254, 246, 238, 0.08); }
 
 /* ==========================================================================
-   Homepage featured photo grid — one large + two stacked, avoids the
-   uniform-grid "template" look of equal-sized tiles.
+   Card flow — flexbox, not CSS grid: grid never centers a partial last row
+   (5 cards in a 3-column grid leaves the 4th/5th stuck at the left with a
+   dead gap on the right). Flexbox centers each wrapped line on its own.
+   ========================================================================== */
+
+.card-flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-32);
+}
+.card-flow > .card {
+  flex: 1 1 300px;
+  max-width: 380px;
+}
+@media (max-width: 640px) {
+  .card-flow > .card { flex: 1 1 100%; max-width: none; }
+}
+
+/* ==========================================================================
+   Hours feature — a thin line-art roofline behind the hours list, the
+   architectural-line-drawing move from the reference site, adapted to
+   Whiskey Ranch's single set of hours. Grid overlap (not a negative
+   margin): the graphic and hours list share one grid cell so the content
+   is always correctly positioned regardless of how the SVG itself ends up
+   sized by the browser.
+   ========================================================================== */
+
+/* Bigger graphic, tighter section padding: at the old 420px/230px size this
+   whole section was a small triangle lost in a sea of burgundy with 80px of
+   section padding above and below it — it read as broken, not spacious. */
+.hours-feature { text-align: center; --hours-line-color: var(--color-coral); }
+.hours-feature.on-dark { --hours-line-color: var(--color-dusty-rose); }
+.hours-feature-graphic {
+  display: grid;
+  justify-items: center;
+  margin: var(--space-24) auto 0;
+  max-width: 580px;
+}
+.hours-feature-svg { grid-area: 1 / 1; width: 100%; height: 320px; }
+.hours-feature-content { grid-area: 1 / 1; align-self: end; padding-bottom: var(--space-32); }
+.hours-feature .hours-block { max-width: 320px; margin: 0 auto; font-size: 1.05rem; }
+@media (max-width: 640px) { .hours-feature-svg { height: 240px; } }
+
+/* ==========================================================================
+   Homepage featured photo grid
    ========================================================================== */
 
 .grid-feature {
@@ -661,7 +878,7 @@ body.lightbox-locked { overflow: hidden; }
   grid-template-columns: 1.4fr 1fr;
   grid-template-rows: 1fr 1fr;
   aspect-ratio: 16 / 9;
-  gap: var(--space-xs);
+  gap: var(--space-8);
 }
 .grid-feature .grid-feature-main { grid-column: 1; grid-row: 1 / span 2; }
 .grid-feature .gallery-item { aspect-ratio: unset; width: 100%; height: 100%; }
@@ -676,15 +893,16 @@ body.lightbox-locked { overflow: hidden; }
    ========================================================================== */
 
 .text-center { text-align: center; }
-.mt-lg { margin-top: var(--space-lg); }
-.mb-lg { margin-bottom: var(--space-lg); }
+.mt-lg { margin-top: var(--space-64); }
+.mb-lg { margin-bottom: var(--space-64); }
 .mb-0 { margin-bottom: 0; }
 .narrow { max-width: 760px; margin-left: auto; margin-right: auto; }
 
 .placeholder-notice {
-  border: 1px dashed var(--color-blue);
-  padding: var(--space-sm) var(--space-md);
+  border: 1px dashed var(--color-coral);
+  border-radius: 8px;
+  padding: var(--space-16) var(--space-24);
   font-size: 0.88rem;
   color: var(--color-muted-on-cream);
-  background: var(--color-cream-soft);
+  background: var(--color-bone);
 }
