@@ -511,16 +511,19 @@ body.lightbox-locked { overflow: hidden; }
   color: var(--color-muted-on-dark);
   padding: var(--space-lg) 0 var(--space-md);
 }
+/* Flexbox, not a grid with fr tracks: fr columns stretched each block to its
+   track width regardless of content, leaving a huge dead gap between the
+   (narrow) logo/address block and the Hours column. Flex + space-between
+   sizes each block to its own content and spaces them evenly instead. */
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: var(--space-lg);
   margin-bottom: var(--space-lg);
 }
-.footer-grid > div:nth-child(3) { justify-self: end; }
 @media (max-width: 780px) {
-  .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
-  .footer-grid > div:nth-child(3) { justify-self: stretch; }
+  .footer-grid { flex-direction: column; gap: var(--space-md); }
   .site-footer .footer-explore { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9em 1.25em; }
 }
 .footer-logo img { height: 76px; width: auto; margin-bottom: var(--space-sm); }
