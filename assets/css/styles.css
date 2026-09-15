@@ -1,31 +1,34 @@
 /* ==========================================================================
    Whiskey Ranch — Design System
-   Built on the "Ghia" style reference (Mediterranean aperitivo label):
-   warm cream canvases, deep burgundy statement sections, coral pill CTAs.
-   Adapted with Whiskey Ranch's own photography and copy.
+   Layout patterns (announcement bar, hero, marquee, story-split, circle
+   cards) came from studying the "Ghia" reference site, but the palette is
+   the client's own: navy and blue (their stated preference), plus the
+   logo's own tan/brown as a secondary accent. Token NAMES below still say
+   "burgundy"/"coral"/etc. from that reference pass — only the VALUES are
+   Whiskey Ranch's; renaming is cosmetic and can wait.
    ========================================================================== */
 
 :root {
   /* Colors */
-  --color-burgundy: #651c32;
-  --color-burgundy-deep: #4a1424;
-  --color-coral: #ef6079;
-  --color-coral-deep: #d94863;
+  --color-burgundy: #0d2340;
+  --color-burgundy-deep: #081627;
+  --color-coral: #2f5fa8;
+  --color-coral-deep: #234a86;
   --color-cream: #f2e2d5;
   --color-bone: #fef6ee;
   --color-smoke: #e5e7eb;
   --color-charcoal: #000000;
-  --color-olive: #3e4938;
-  --color-dusty-rose: #dfcac8;
-  --color-riviera-blue: #abd2eb;
-  --color-limoncello: #f0e87b;
-  --color-sage: #b6cfd0;
+  --color-olive: #7a5a3f;
+  --color-dusty-rose: #a9c4e8;
+  --color-riviera-blue: #7fa8e3;
+  --color-limoncello: #c9974f;
+  --color-sage: #c9ab8a;
 
-  --color-text-on-cream: #3a1420;
+  --color-text-on-cream: #16233a;
   --color-muted-on-cream: #6b5248;
-  --color-muted-on-dark: #e3c9bf;
+  --color-muted-on-dark: #b9c9dc;
   --color-border-on-dark: rgba(254, 246, 238, 0.18);
-  --color-border-on-cream: rgba(101, 28, 50, 0.16);
+  --color-border-on-cream: rgba(13, 35, 64, 0.16);
 
   /* Type */
   --font-display: 'Bebas Neue', 'Oswald', sans-serif;
@@ -553,7 +556,7 @@ body.lightbox-locked { overflow: hidden; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(74,20,36,0.15) 0%, rgba(74,20,36,0.85) 100%);
+  background: linear-gradient(180deg, rgba(8,22,39,0.15) 0%, rgba(8,22,39,0.85) 100%);
 }
 .page-banner h1 { color: var(--color-bone); font-size: clamp(2.5rem, 5.5vw, 3.75rem); }
 .page-banner-content {
@@ -824,7 +827,7 @@ body.lightbox-locked { overflow: hidden; }
    made text invisible in the dark liquor-menu section, where item names are
    hardcoded to that same cream color. A tint over whatever's already there
    can never fully match the text color, light or dark section alike. */
-.menu-item:hover { background: rgba(101, 28, 50, 0.06); }
+.menu-item:hover { background: rgba(13, 35, 64, 0.06); }
 .section-dark .menu-item:hover { background: rgba(254, 246, 238, 0.08); }
 
 /* ==========================================================================
