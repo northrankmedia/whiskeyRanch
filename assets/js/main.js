@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function openLightbox(item, img) {
       lastTrigger = item;
-      lightboxImg.src = img.src;
+      lightboxImg.src = img.getAttribute('data-full') || img.src;
       lightboxImg.alt = img.alt;
       lightbox.classList.add('open');
       document.body.classList.add('lightbox-locked');

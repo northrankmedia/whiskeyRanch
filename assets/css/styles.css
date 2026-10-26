@@ -283,7 +283,9 @@ body.lightbox-locked { overflow: hidden; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.6rem 0.65rem;
+  min-width: 44px;
+  min-height: 44px;
 }
 .nav-toggle span {
   display: block;
@@ -308,6 +310,9 @@ body.lightbox-locked { overflow: hidden; }
     display: none;
   }
   .nav-links.open { display: flex; }
+  .nav-links { gap: 0; }
+  .nav-links a:not(.btn) { display: inline-flex; align-items: center; min-height: 44px; }
+  .nav-links li:last-child { margin-top: var(--space-8); }
   .nav-links a { white-space: normal; font-size: 0.95rem; }
   .nav-logo img { height: 72px; }
 }
@@ -340,9 +345,9 @@ body.lightbox-locked { overflow: hidden; }
   /* Headline + CTA first, not the photo: on mobile, making someone scroll
      past a full-screen image before they see what the place is (or the
      View Menu button) costs attention we don't get back. */
-  .hero-ghia { grid-template-columns: 1fr; }
+  .hero-ghia { grid-template-columns: minmax(0, 1fr); }
   .hero-ghia-copy { padding: var(--space-48) var(--space-24); order: 1; }
-  .hero-ghia-photo { order: 2; min-height: 320px; }
+  .hero-ghia-photo { order: 2; min-height: 0; aspect-ratio: 6 / 5; max-height: 420px; }
 }
 
 .hero-actions {
@@ -749,7 +754,7 @@ body.lightbox-locked { overflow: hidden; }
 .footer-logo img { height: 68px; width: auto; margin-bottom: var(--space-16); }
 .footer-social { display: flex; gap: var(--space-16); margin-top: var(--space-16); }
 .footer-social a {
-  width: 38px; height: 38px;
+  width: 44px; height: 44px;
   border: 1px solid var(--color-border-on-dark);
   border-radius: var(--radius-pill);
   display: flex; align-items: center; justify-content: center;
@@ -784,6 +789,37 @@ body.lightbox-locked { overflow: hidden; }
   transition: opacity var(--transition);
 }
 .footer-explore a:hover { opacity: 1; }
+
+/* Footer tap targets: 44px minimum hit area, visual size unchanged. */
+.site-footer p a,
+.footer-explore a,
+.footer-legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.site-footer p:has(> a) { margin-bottom: 0; }
+.footer-explore { gap: 0; }
+.footer-bottom { align-items: center; }
+
+/* Sticky Call / Directions bar, mobile only. */
+.mobile-cta { display: none; }
+@media (max-width: 860px) {
+  .mobile-cta {
+    display: flex;
+    gap: var(--space-8);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    padding: var(--space-8) var(--space-16) calc(var(--space-8) + env(safe-area-inset-bottom));
+    background: var(--color-burgundy);
+    border-top: 1px solid var(--color-border-on-dark);
+  }
+  .mobile-cta .btn { flex: 1; min-height: 44px; }
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+}
 
 /* ==========================================================================
    Scroll reveal
