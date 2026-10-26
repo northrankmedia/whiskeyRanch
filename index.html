@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whiskey Ranch | Bar &amp; Grill in Oxford, MS</title>
-  <meta name="description" content="Whiskey Ranch is a bar &amp; grill on the Oxford Square in Oxford, Mississippi, with bourbon, cold drinks, live music, and late nights. Come for a drink, stay for the story.">
+  <title>Whiskey Ranch | Bar &amp; Grill with Live Music in Oxford, MS</title>
+  <meta name="description" content="Whiskey Ranch is a bar &amp; grill on the Oxford Square in Oxford, MS with bourbon, cold beer, loaded fries, and live music every weekend. Open late.">
   <link rel="canonical" href="https://www.whiskeyranchoxford.com/">
-  <meta property="og:type" content="restaurant">
-  <meta property="og:title" content="Whiskey Ranch | Bar &amp; Grill in Oxford, MS">
-  <meta property="og:description" content="Whiskey Ranch is a bar &amp; grill on the Oxford Square in Oxford, Mississippi, with bourbon, cold drinks, live music, and late nights. Come for a drink, stay for the story.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Whiskey Ranch">
+  <meta property="og:title" content="Whiskey Ranch | Bar &amp; Grill with Live Music in Oxford, MS">
+  <meta property="og:description" content="Whiskey Ranch is a bar &amp; grill on the Oxford Square in Oxford, MS with bourbon, cold beer, loaded fries, and live music every weekend. Open late.">
   <meta property="og:url" content="https://www.whiskeyranchoxford.com/">
   <meta property="og:image" content="https://www.whiskeyranchoxford.com/assets/gallery/hero-old-fashioned-splash.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Whiskey Ranch | Bar &amp; Grill with Live Music in Oxford, MS">
+  <meta name="twitter:description" content="Whiskey Ranch is a bar &amp; grill on the Oxford Square in Oxford, MS with bourbon, cold beer, loaded fries, and live music every weekend. Open late.">
 
-  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/gallery/thumbs/hero-old-fashioned-splash.webp" type="image/webp" fetchpriority="high">
 
   <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -31,7 +36,16 @@
     "url": "https://www.whiskeyranchoxford.com/",
     "telephone": "+1-844-643-3855",
     "priceRange": "$$",
-    "servesCuisine": ["American", "Bar Food", "Southern"],
+    "servesCuisine": [
+      "American",
+      "Bar Food",
+      "Southern"
+    ],
+    "foundingDate": "2025-02",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Backwoods Hospitality Group"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1112 Van Buren Avenue",
@@ -40,13 +54,59 @@
       "postalCode": "38655",
       "addressCountry": "US"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.36594,
+      "longitude": -89.51945
+    },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "01:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "01:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "21:00" }
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "16:00",
+        "closes": "01:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "11:00",
+        "closes": "01:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "11:00",
+        "closes": "21:00"
+      }
     ],
-    "sameAs": ["https://www.instagram.com/whiskeyranchoxford", "https://www.facebook.com/p/Whiskey-Ranch-Oxford-61575910010512/"],
-    "image": ["https://www.whiskeyranchoxford.com/assets/gallery/hero-old-fashioned-splash.jpg"]
+    "sameAs": [
+      "https://www.instagram.com/whiskeyranchoxford",
+      "https://www.facebook.com/p/Whiskey-Ranch-Oxford-61575910010512/"
+    ],
+    "image": [
+      "https://www.whiskeyranchoxford.com/assets/gallery/hero-old-fashioned-splash.jpg"
+    ],
+    "hasMenu": {
+      "@id": "https://www.whiskeyranchoxford.com/menu#menu"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.whiskeyranchoxford.com/#website",
+    "url": "https://www.whiskeyranchoxford.com/",
+    "name": "Whiskey Ranch",
+    "publisher": {
+      "@id": "https://www.whiskeyranchoxford.com/#business"
+    }
   }
   </script>
 </head>
@@ -58,7 +118,7 @@
   <header class="site-header">
     <nav class="nav">
       <a href="/" class="nav-logo">
-        <img src="assets/brand/whiskey-ranch-logo-400.png" alt="Whiskey Ranch Bar &amp; Grill">
+        <img src="assets/brand/whiskey-ranch-logo-200.png" alt="Whiskey Ranch Bar &amp; Grill" width="200" height="251">
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
@@ -80,14 +140,16 @@
   <section class="hero-ghia">
     <div class="hero-ghia-copy">
       <p class="label label-on-cream">Oxford, Mississippi</p>
-      <h1>Come For A<br>Drink. Stay<br>For The Story.</h1>
+      <h1>Whiskey Ranch<br>Bar &amp; Grill<br>in Oxford, MS</h1>
+      <p style="font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.02em;text-transform:uppercase;color:var(--color-coral);margin-bottom:var(--space-16);">Come for a drink. Stay for the story.</p>
       <p style="max-width:34em;font-size:1.05rem;color:var(--color-muted-on-cream);">Good bourbon, cold drinks, live music, and late nights: a favorite place out in the country, right in the heart of Oxford.</p>
       <div class="hero-actions">
         <a href="menu" class="btn btn-coral">View Our Menu</a>
         <a href="about" class="btn btn-outline-cream">Our Story</a>
+        <a href="https://maps.google.com/?q=Whiskey+Ranch+1112+Van+Buren+Ave+Oxford+MS+38655" class="btn btn-outline-cream" target="_blank" rel="noopener">Get Directions</a>
       </div>
     </div>
-    <div class="hero-ghia-photo" style="background-image:url('assets/gallery/hero-old-fashioned-splash.jpg'); background-position: center 70%;"></div>
+    <div class="hero-ghia-photo" role="img" aria-label="An old fashioned cocktail splashing at the Whiskey Ranch bar in Oxford, MS" style="background-image:url('assets/gallery/hero-old-fashioned-splash.jpg'); background-image:image-set(url('assets/gallery/thumbs/hero-old-fashioned-splash.webp') type('image/webp'), url('assets/gallery/hero-old-fashioned-splash.jpg') type('image/jpeg')); background-position: center 70%;"></div>
   </section>
 
   <div class="marquee-bar">
@@ -105,28 +167,40 @@
   </section>
 
   <section class="section section-cream">
+    <div class="container narrow text-center reveal">
+      <p class="label label-on-cream">Bar &amp; Grill In Oxford, MS</p>
+      <h2>A Bourbon Bar On The Oxford Square</h2>
+      <p>Whiskey Ranch is a bar and grill at 1112 Van Buren Avenue on the Oxford Square in Oxford, Mississippi. It opened in February 2025, brought to the Square by Backwoods Hospitality Group, and it was built to feel less like another bar and more like a favorite place out in the country.</p>
+      <p>The bar is stocked for people who like to sip slow. The bourbon shelf runs from Penelope, Tin Cup, and Russell's up through Willett, Rebel Cask Strength, Jefferson's Ocean, and Booker's, and there is a full bourbon and whiskey selection at the bar, so ask your bartender what's pouring tonight. Cold domestic and imported beer starts at $5, and the vodka and tequila lineups are on the menu too.</p>
+      <p>The kitchen sends out hand cut loaded fries and truffle fries, hand battered mozzarella sticks, in-house breaded chicken tenders, and four grilled cheeses. Live music plays on the Oxford Square every weekend, and walk-ins are welcome every night we're open: Monday through Friday from 4:00pm, Saturday from 11:00am, and Sunday from 11:00am to 9:00pm.</p>
+      <a href="menu" class="btn btn-coral">See The Menu</a>
+      <a href="location" class="btn btn-outline-cream">Hours &amp; Location</a>
+    </div>
+  </section>
+
+  <section class="section section-cream">
     <div class="container reveal">
       <p class="label label-on-cream text-center" style="display:block;">The Bar</p>
       <h2 class="text-center">Pick Your Pour</h2>
       <div class="circle-card-grid mt-lg">
         <div class="circle-card">
-          <div class="circle-card-photo" style="background-image:url('assets/gallery/cocktail-old-fashioned-close.jpg');"></div>
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/thumbs/cocktail-old-fashioned-close.webp');"></div>
           <p class="circle-card-name">Bourbon</p>
           <p class="circle-card-sub">From $10</p>
         </div>
         <div class="circle-card">
-          <div class="circle-card-photo" style="background-image:url('assets/gallery/bar-pour-martini.jpg'); background-position: center 30%;"></div>
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/thumbs/bar-pour-martini.webp'); background-position: center 30%;"></div>
           <p class="circle-card-name">Vodka</p>
           <p class="circle-card-sub">From $10</p>
         </div>
         <div class="circle-card">
-          <div class="circle-card-photo" style="background-image:url('assets/gallery/bar-pour-bartender.jpg'); background-position: center 30%;"></div>
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/thumbs/bar-pour-bartender.webp'); background-position: center 30%;"></div>
           <p class="circle-card-name">Tequila</p>
           <p class="circle-card-sub">From $12</p>
           <span class="sticker-tag" style="position:static;display:inline-block;margin-top:6px;transform:rotate(-6deg);">Bestseller</span>
         </div>
         <div class="circle-card">
-          <div class="circle-card-photo" style="background-image:url('assets/gallery/hero-old-fashioned-splash.jpg'); background-position: center 25%;"></div>
+          <div class="circle-card-photo" style="background-image:url('assets/gallery/thumbs/hero-old-fashioned-splash.webp'); background-position: center 25%;"></div>
           <p class="circle-card-name">Beer</p>
           <p class="circle-card-sub">From $5</p>
         </div>
@@ -152,7 +226,7 @@
           <a href="location" class="btn btn-outline-cream">Location &amp; Hours</a>
         </div>
         <div class="reveal reveal-2 framed-photo">
-          <img src="assets/gallery/patio-oxford-square.jpg" alt="Guests on the patio at Whiskey Ranch overlooking the Oxford Square">
+          <img src="assets/gallery/thumbs/patio-oxford-square.webp" width="900" height="1349" loading="lazy" decoding="async" alt="Guests on the patio at Whiskey Ranch overlooking the Oxford Square">
         </div>
       </div>
     </div>
@@ -175,10 +249,11 @@
       <div class="footer-grid">
         <div>
           <a href="/" class="footer-logo">
-            <img src="assets/brand/whiskey-ranch-logo-200.png" alt="Whiskey Ranch Bar &amp; Grill">
+            <img src="assets/brand/whiskey-ranch-logo-200.png" alt="Whiskey Ranch Bar &amp; Grill" width="200" height="251" loading="lazy" decoding="async">
           </a>
           <p>1112 Van Buren Avenue<br>Oxford, MS 38655</p>
           <p><a href="tel:+18446433855">(844) 643-3855</a></p>
+          <p><a href="https://maps.google.com/?q=Whiskey+Ranch+1112+Van+Buren+Ave+Oxford+MS+38655" target="_blank" rel="noopener">Get Directions</a></p>
           <div class="footer-social">
             <a href="https://www.instagram.com/whiskeyranchoxford" aria-label="Whiskey Ranch on Instagram" target="_blank" rel="noopener">IG</a>
             <a href="https://www.facebook.com/p/Whiskey-Ranch-Oxford-61575910010512/" aria-label="Whiskey Ranch on Facebook" target="_blank" rel="noopener">FB</a>
@@ -198,6 +273,7 @@
             <li><a href="menu">Menu</a></li>
             <li><a href="about">Our Story</a></li>
             <li><a href="gallery">Gallery</a></li>
+            <li><a href="location">Location &amp; Hours</a></li>
             <li><a href="contact">Contact</a></li>
           </ul>
         </div>
@@ -209,6 +285,11 @@
       </div>
     </div>
   </footer>
+
+  <div class="mobile-cta">
+    <a href="tel:+18446433855" class="btn btn-coral">Call (844) 643-3855</a>
+    <a href="https://maps.google.com/?q=Whiskey+Ranch+1112+Van+Buren+Ave+Oxford+MS+38655" class="btn btn-outline-dark" target="_blank" rel="noopener">Directions</a>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>
